@@ -2,7 +2,10 @@ const express = require('express')
 const app=express()
 
 require('dotenv').config()
-console.log(process)
+const PORT = process.env.PORT || 8080;
+console.log(PORT)
+
+
 
 
 app.get("/",(req,res)=>{
@@ -12,11 +15,7 @@ app.get("/",(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log("server is running ")
+app.listen(PORT,()=>{
+    console.log(`"server is running ${PORT} "`)
 })
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log(process.env.PORT);
-//     console.log("The YelpCamp Server Has Started!");
-//  });
